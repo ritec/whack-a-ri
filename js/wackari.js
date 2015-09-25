@@ -26,6 +26,8 @@ window.onload = function () {
   var coin = new Audio('sounds/coin.wav');
 
   level_in.play();
+  bumpListener();
+
   if (game_start == true) {
    setInterval(change_image, 500 );
   }
@@ -59,6 +61,16 @@ window.onload = function () {
   function increasePoints(){
       document.getElementById("points").innerHTML = points++;
       coin.play();
+  }
+
+  function bumpListener() {
+    for (i =0; i < original_picture_id.length; i++) {
+      document.getElementById(original_picture_id[i]).addEventListener("click", bumpPlay());
+    }
+  }
+
+  function bumpPlay() {
+    bump.play();
   }
 
 }
