@@ -4,7 +4,7 @@ window.onload = function () {
   Glad to see you here!
   TROLOLOLOLOL to you!
   Created on 5/25/2015
-  Created by Ri Caragol as a "Free Friday"f or MOBI.
+  Created by Ri Caragol as a "Free Friday".
   */
 
   //Imagery Variables
