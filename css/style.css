@@ -1,3 +1,9 @@
+div {
+    box-sizing:border-box;
+    -moz-box-sizing:border-box; /* Firefox */
+    -webkit-box-sizing:border-box; /* Safari */
+}
+
 body {
   font-size: 10pt;
   font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
@@ -20,7 +26,18 @@ p.subheader {
 }
 
 img {
+    padding:none;
+    width:350px;
+    height:247px;
+    margin:5px;
+}
 
+img.green {
+  border: 1px;
+}
+
+img.red {
+  border: 1px;
 }
 
 a {

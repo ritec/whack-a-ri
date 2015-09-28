@@ -42,7 +42,7 @@ window.onload = function () {
   bumpListener();
 
   if (game_start == true) {
-   setInterval(change_image, 500 );
+   setInterval(change_image, 700 );
   }
 
   function change_image() {
@@ -52,8 +52,9 @@ window.onload = function () {
       change_to_src = picture_array[random_replacement_pic];
 
       document.getElementById(original_picture_id[random_pic_to_replace]).addEventListener("click", increasePoints);
+      setStyle(original_picture_id[random_pic_to_replace], {'outline':'10px solid #008000'});
       document.getElementById(original_picture_id[random_pic_to_replace]).src = change_to_src;
-      setInterval(reset, 1000 );
+      setInterval(reset, 1400 );
     } else if ((points == 5) && (game_start == true)){
       clockStop();
       increasePoints();
@@ -70,6 +71,7 @@ window.onload = function () {
     for (i =0; i < original_picture_id.length; i++) {
       document.getElementById(original_picture_id[i]).src = source_reset;
       document.getElementById(original_picture_id[i]).removeEventListener("click", increasePoints);
+      setStyle(original_picture_id[i], {'outline':'0px'});
     }
   }
 
@@ -86,6 +88,13 @@ window.onload = function () {
 
   function bumpPlay() {
     bump.play();
+  }
+
+  //dynamic styles
+  function setStyle( elId, propertyObject ) {
+   var el = document.getElementById(elId);
+   for (var property in propertyObject)
+      el.style[property] = propertyObject[property];
   }
 
   //Timer
